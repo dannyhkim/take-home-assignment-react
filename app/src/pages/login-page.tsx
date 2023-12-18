@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Input from '../components/input/input'
 import logo from '../assets/Logo.png'
 import { useAuth } from '../auth/auth-context'
-import { SignInContainer, Header, SubHeader, BodyText, Logo, SignInButton } from './styled'
+import { PageContainer, SignInContainer, Header, SubHeader, BodyText, Logo, SignInButton } from './styled'
 
 const SignInPage: React.FC = () => {
   const { login, isAuthenticated, refreshSession } = useAuth()
@@ -47,7 +47,7 @@ const SignInPage: React.FC = () => {
   }, [isAuthenticated, navigate, refreshSession])
 
   return (
-    <>
+    <PageContainer>
       <SignInContainer>
         <Logo src={logo} alt="Logo" />
         <Header>Sign in</Header>
@@ -72,7 +72,7 @@ const SignInPage: React.FC = () => {
         ©2001–2019 All Rights Reserved. Clip® is a registered trademark of Rover Labs. Cookie Preferences, Privacy, and
         Terms.
       </BodyText>
-    </>
+    </PageContainer>
   )
 }
 

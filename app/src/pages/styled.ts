@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const PageContainer = styled.div`
-text-align: left;
-margin: 20px;
+  text-align: left;
+  margin: 20px;
 `
 
 export const SignInContainer = styled.div`
@@ -61,4 +61,7 @@ export const BodyText = styled.div`
   letter-spacing: 0;
   line-height: 24px;
   margin-top: 32px;
+  width: 466px;
+  margin: 0 auto;
+  text-align: center;
 `
