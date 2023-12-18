@@ -25,7 +25,7 @@ const LogoutButton = styled.button`
 `
 
 const ProductsPage: React.FC = () => {
-  const { isAuthenticated, logout } = useAuth()
+  const { isAuthenticated, logout, refreshSession } = useAuth()
   const navigate = useNavigate()
   const [products, setProducts] = useState([])
 
@@ -49,6 +49,22 @@ const ProductsPage: React.FC = () => {
       fetchProducts()
     }
   }, [isAuthenticated, navigate])
+
+  // handle when session expires
+  useEffect(() => {
+    const handleSessionExpiration = async () => {
+      try {
+        if (isAuthenticated) {
+          await refreshSession()
+        }
+      } catch (err) {
+        console.error('Session refresh failed:', err.message)
+        navigate('/login')
+      }
+    }
+
+    handleSessionExpiration()
+  }, [isAuthenticated, navigate, refreshSession])
 
   return (
     <PageContainer>
