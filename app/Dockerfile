@@ -6,8 +6,8 @@ RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"] 
 
 COPY package.json yarn.lock ./
-RUN yarn install
 COPY . .
 
+RUN yarn install
 
 CMD ["yarn", "run", "dev"]
