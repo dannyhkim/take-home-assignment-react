@@ -1,4 +1,3 @@
-// products-page.tsx
 import React, { useEffect, useState } from 'react'
 import { useAuth } from '../auth/auth-context'
 import { useNavigate } from 'react-router-dom'

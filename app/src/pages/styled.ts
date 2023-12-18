@@ -59,7 +59,6 @@ export const BodyText = styled.div`
   font-size: 14px;
   color: #858484;
   letter-spacing: 0;
-  text-align: center;
   line-height: 24px;
   margin-top: 32px;
 `
